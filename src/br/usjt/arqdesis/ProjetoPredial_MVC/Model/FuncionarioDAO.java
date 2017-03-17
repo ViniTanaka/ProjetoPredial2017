@@ -44,14 +44,13 @@ public class FuncionarioDAO {
          var = true;
          stmt.close();//Fecha Statement
          } catch (Exception u){
-        	 JOptionPane.showMessageDialog(null, u.getMessage());
-        	 
+        	 JOptionPane.showMessageDialog(null, u.getMessage());              	 
          }
          return var;
 		
 	}
 	
-	public void consultarFuncionario(Funcionario funcionario)
+	public Funcionario consultarFuncionario(Funcionario funcionario)
 	{
 		String sql = "SELECT * FROM Funcionario WHERE CPF = ?";
 		try {
@@ -71,6 +70,8 @@ public class FuncionarioDAO {
 		} catch (Exception u){
 			JOptionPane.showMessageDialog(null, u.getMessage());
          }
+                
+                return funcionario;
 	}
 	
 	public void alterarFuncionario(Funcionario funcionario)
